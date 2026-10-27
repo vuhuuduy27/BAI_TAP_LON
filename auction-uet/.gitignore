@@ -1,0 +1,17 @@
+# Build output & compiled classes
+target/
+*.class
+
+# System & Data files
+*.dat
+auctions.dat
+../auctions.dat
+target/
+
+# IDE files
+.classpath
+.project
+.settings/
+.vscode/
+.idea/
+*.iml
