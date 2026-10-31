@@ -1,7 +1,6 @@
 package vn.edu.uet.core;
 
 import java.time.LocalDateTime;
-import java.util.Objects;
 import java.util.UUID;
 
 public class Bid {
@@ -29,19 +28,15 @@ public class Bid {
 
     @Override
     public boolean equals(Object o){
-        if(this == o){ // Bằng chính nó thì luôn đúng
-            return true;
-        }else if(o == null || getClass() != o.getClass()){
-            // So sánh xem có đúng là Bid hay không
-            return false;
-        }
-        // Kiểm tra xong thì chắc chắn là Bid
-        Bid bid = (Bid) o;
-        return Objects.equals(id, bid.id);
+        if(o instanceof Bid){
+            Bid bid = (Bid) o;
+            return id.equals(bid.id);
+         }
+        return false;
     }
 
     @Override
-    public int hashCode(){
-        return Objects.hash(id); // Băm Id ra số nguyên
+    public int hashCode() {
+        return id.hashCode();
     }
 }
