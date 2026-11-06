@@ -4,9 +4,10 @@ import java.util.HashSet;
 
 public class Bidder extends User {
     private long balance;
+    private HashSet<String> auctionList = new HashSet<>();
 
-    public Bidder(String userName, String password, String email, String fullName, long balance) {
-        super(userName, password, email, fullName);
+    public Bidder(String userName, String password, String email, long balance) {
+        super(userName, password, email);
         this.balance = balance;
     }
 
@@ -19,13 +20,17 @@ public class Bidder extends User {
     }
 
     public void withdraw(long amount) {
-        this.balance -= amount;
+        if (this.balance >= amount) {
+            this.balance -= amount;
+        }
     }
     public void deposit(long amount) {
-        this.balance += amount;
+        if (amount <= 0) {
+            this.balance += amount;
+        }
     }
 
-    private HashSet<String> auctionList = new HashSet<>();
+
     public boolean findAuction(String auctionId) {
         if (auctionList.contains(auctionId)) {
             return true;
@@ -35,21 +40,21 @@ public class Bidder extends User {
 
     public boolean joinAuction(String auctionId) {
         if (findAuction(auctionId)) {
-            return true;
+            return auctionList.add(auctionId);
         }
         return false;
     }
 
-    public boolean leaveAuction() {
-        return true;
+    public boolean leaveAuction(String auctionId) {
+        return auctionList.contains(auctionId);
     }
 
     @Override
-    public Roles getRole() {return Roles.BIDDER;}
+    public Role getRole() {return Role.BIDDER;}
 
     @Override
     public String getDescription() {
-        return "Bidder: " + super.getDescription() + "| Balance" + balance;
+        return "Bidder: " + super.getDescription() + "| Balance: " + balance;
     }
 
 }

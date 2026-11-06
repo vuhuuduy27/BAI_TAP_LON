@@ -3,7 +3,7 @@ package entity;
 
 import java.time.LocalDateTime;
 
-    abstract class User {
+abstract public class User {
         private String id;
         private String userName;
         private String password;
@@ -23,7 +23,7 @@ import java.time.LocalDateTime;
         public String getUserName() { return this.userName;}
         public String getPassword() { return this.password;}
         public String getEmail() { return this.email;}
-        public String getStatus() { return this.status;}
+        public boolean getStatus() { return this.status;}
 
         public void setEmail(String email) {
             this.email = email;
@@ -33,10 +33,7 @@ import java.time.LocalDateTime;
         }
 
         public boolean checkPassword(String raw) {
-            if (raw.equals(this.password)) {
-                return true;
-            }
-            return false;
+            return raw.equals(this.password);
         }
 
         public boolean changePassword(String old, String now) {
@@ -47,7 +44,7 @@ import java.time.LocalDateTime;
             return false;
         }
 
-        public abstract Roles getRole();
+        public abstract Role getRole();
 
         public String getDescription() {
             return this.userName + " | Email: " + this.email;

@@ -12,17 +12,12 @@ public class Admin extends User {
     }
      */
     @Override
-    public Roles getRole() {
-        return Roles.ADMIN;
+    public Role getRole() {
+        return Role.ADMIN;
     }
 
     @Override
     public String getDescription() {
         return "Admin: " + super.getDescription();
     }
-}
-
-
-
-
 }

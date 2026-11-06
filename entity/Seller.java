@@ -1,11 +1,13 @@
 package entity;
 
+import java.util.List;
+import java.util.ArrayList;
 
 public class Seller extends User  {
     private List<Item> itemsList;
 
-    public Seller(String userName, String password, String email, String fullName) {
-        super(userName, password, email, fullName);
+    public Seller(String userName, String password, String email) {
+        super(userName, password, email);
         this.itemsList = new ArrayList<>();
     }
 
@@ -34,13 +36,13 @@ public class Seller extends User  {
     }
 
     @Override
-    public Roles getRole() {
-        return Roles.SELLER;
+    public Role getRole() {
+        return Role.SELLER;
     }
 
     @Override
-    public String getDEscription() {
-        return "Seller: " + super.getDescription() + "| So luong items:" + this.itemList.size();
+    public String getDescription() {
+        return "Seller: " + super.getDescription() + "| So luong items:" + this.itemsList.size();
     }
 
 }
