@@ -6,10 +6,12 @@ public class Bidder extends User {
     private long balance;
     private HashSet<String> auctionList = new HashSet<>();
 
-    public Bidder(String userName, String password, String email, long balance) {
-        super(userName, password, email);
+    public Bidder(String userName, String password,
+                  String email, long balance, String fullName) {
+        super(userName, password, email, fullName);
         this.balance = balance;
     }
+
 
     public long getBalance() {return this.balance;}
 
@@ -25,7 +27,7 @@ public class Bidder extends User {
         }
     }
     public void deposit(long amount) {
-        if (amount <= 0) {
+        if (amount > 0) {
             this.balance += amount;
         }
     }
@@ -39,14 +41,14 @@ public class Bidder extends User {
     }
 
     public boolean joinAuction(String auctionId) {
-        if (findAuction(auctionId)) {
+        if (!findAuction(auctionId)) {
             return auctionList.add(auctionId);
         }
         return false;
     }
 
     public boolean leaveAuction(String auctionId) {
-        return auctionList.contains(auctionId);
+        return auctionList.remove(auctionId);
     }
 
     @Override

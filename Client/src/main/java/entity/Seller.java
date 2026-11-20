@@ -1,4 +1,5 @@
 package entity;
+import Items.*;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -6,8 +7,9 @@ import java.util.ArrayList;
 public class Seller extends User  {
     private List<Item> itemsList;
 
-    public Seller(String userName, String password, String email) {
-        super(userName, password, email);
+    public Seller(String userName, String password,
+                  String email, String fullName) {
+        super(userName, password, email, fullName);
         this.itemsList = new ArrayList<>();
     }
 

@@ -1,0 +1,17 @@
+entityService\UserManager.class
+Items\Electronics.class
+entity\Bidder.class
+entity\Roles.class
+com\auction\auction_client\LoginApplication.class
+entity\User.class
+entityService\AuthService.class
+module-info.class
+Items\Art.class
+entity\Seller.class
+entityService\PasswordHasher.class
+entity\Admin.class
+com\auction\auction_client\LoginController.class
+Items\Item.class
+com\auction\auction_client\Launcher.class
+Items\Vehicle.class
+entity\Role.class
