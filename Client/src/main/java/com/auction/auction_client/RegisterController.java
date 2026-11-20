@@ -3,12 +3,11 @@ package com.auction.auction_client;
 
 import entity.Role;
 import entityService.AuthService;
+import entityService.Validator;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.paint.Color;
-
-import java.util.regex.Pattern;
 
 public class RegisterController {
 
@@ -68,27 +67,26 @@ public class RegisterController {
         }
 
         // 2. Kiểm tra username
-        if (username.length() < 4) {
-            showMessage("Username must have at least 4 characters!", Color.RED);
-            return;
-        }
-
-        if (username.contains(" ")) {
-            showMessage("Username cannot contain spaces!", Color.RED);
+        if (!Validator.validateUsername(username)) {
+            showMessage(
+                    "Username must be 4-20 characters and contain only letters, numbers or underscore!",
+                    Color.RED
+            );
             return;
         }
 
         // 3. Kiểm tra email
-        String emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$";
-
-        if (!Pattern.matches(emailRegex, email)) {
+        if (!Validator.validateEmail(email)) {
             showMessage("Invalid email format!", Color.RED);
             return;
         }
 
         // 4. Kiểm tra password
-        if (password.length() < 8) {
-            showMessage("Password must have at least 8 characters!", Color.RED);
+        if (!Validator.validatePassword(password)) {
+            showMessage(
+                    "Password must have at least 8 characters, including uppercase, lowercase and a number!",
+                    Color.RED
+            );
             return;
         }
 
@@ -111,8 +109,10 @@ public class RegisterController {
             txtConfirmPassword.clear();
 
         } else {
-            showMessage("Username already exists or registration failed!",
-                    Color.RED);
+            showMessage(
+                    "Username or email already exists, or registration failed!",
+                    Color.RED
+            );
         }
     }
 

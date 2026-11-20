@@ -12,7 +12,7 @@
 <VBox alignment="CENTER"
       spacing="12"
       prefWidth="400"
-      prefHeight="550"
+      prefHeight="650"
       xmlns="http://javafx.com/javafx/21"
       xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="com.auction.auction_client.RegisterController">
@@ -22,7 +22,7 @@
     </padding>
 
     <Label text="Create Account"
-           style="-fx-font-size: 22px; -fx-font-weight: bold;"/>
+           style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
 
     <TextField fx:id="txtFullName"
                promptText="Full name"
@@ -55,6 +55,28 @@
     <Label fx:id="lblMessage"
            wrapText="true"
            maxWidth="300"/>
+
+    <VBox spacing="6"
+          maxWidth="300"
+          style="-fx-background-color: #F2F2F2;
+                 -fx-background-radius: 8;
+                 -fx-padding: 10;">
+
+        <Label text="Registration requirements"
+               style="-fx-font-weight: bold; -fx-font-size: 12px;"/>
+
+        <Label text="Username: 4–20 characters, letters, numbers and underscore (_)"
+               wrapText="true"
+               style="-fx-font-size: 11px; -fx-text-fill: #666666;"/>
+
+        <Label text="Email: Must have a valid email format"
+               wrapText="true"
+               style="-fx-font-size: 11px; -fx-text-fill: #666666;"/>
+
+        <Label text="Password: At least 8 characters, one uppercase letter, one lowercase letter and one number"
+               wrapText="true"
+               style="-fx-font-size: 11px; -fx-text-fill: #666666;"/>
+    </VBox>
 
     <Hyperlink text="Already have an account? Login"
                onAction="#onBackToLoginClick"/>

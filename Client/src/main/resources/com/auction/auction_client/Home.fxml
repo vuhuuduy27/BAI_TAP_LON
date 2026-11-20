@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+
+
+<BorderPane prefWidth="1000.0"
+            prefHeight="650.0"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.auction.auction_client.HomeController">
+
+    <!-- Header -->
+    <top>
+        <HBox alignment="CENTER_LEFT"
+              spacing="10"
+              prefHeight="65"
+              style="-fx-background-color: #243B55; -fx-padding: 15;">
+
+            <Label text="ONLINE AUCTION SYSTEM"
+                   style="-fx-text-fill: white;
+                          -fx-font-size: 20px;
+                          -fx-font-weight: bold;"/>
+        </HBox>
+    </top>
+
+
+    <!-- Sidebar -->
+    <left>
+        <VBox prefWidth="200"
+              spacing="12"
+              style="-fx-background-color: #192D46; -fx-padding: 20;">
+
+            <Label text="MENU"
+                   style="-fx-text-fill: #AAB8C8;
+                      -fx-font-size: 12px;
+                      -fx-font-weight: bold;"/>
+
+            <Button fx:id="btnHome"
+                    text="Home"
+                    maxWidth="Infinity"
+                    style="-fx-background-color: #344D6B;
+                           -fx-text-fill: white;
+                           -fx-font-size: 14px;
+                           -fx-alignment: CENTER_LEFT;"
+                    onAction="#onHomeButtonClick"/>
+
+            <Button fx:id="btnAuctions"
+                    text="Auctions"
+                    maxWidth="Infinity"
+                    style="-fx-background-color: transparent;
+               -fx-text-fill: white;
+               -fx-font-size: 14px;
+               -fx-alignment: CENTER_LEFT;"
+                    onAction="#onAuctionsButtonClick"/>
+
+            <Button fx:id="btnMyProducts"
+                    text="My Products"
+                    maxWidth="Infinity"
+                    style="-fx-background-color: transparent;
+               -fx-text-fill: white;
+               -fx-font-size: 14px;
+               -fx-alignment: CENTER_LEFT;"
+                    onAction="#onMyProductsButtonClick"/>
+
+            <Button fx:id="btnMyBids"
+                    text="My Bids"
+                    maxWidth="Infinity"
+                    style="-fx-background-color: transparent;
+               -fx-text-fill: white;
+               -fx-font-size: 14px;
+               -fx-alignment: CENTER_LEFT;"
+                    onAction="#onMyBidsButtonClick"/>
+
+            <Button fx:id="btnAccount"
+                    text="Account"
+                    maxWidth="Infinity"
+                    style="-fx-background-color: transparent;
+               -fx-text-fill: white;
+               -fx-font-size: 14px;
+               -fx-alignment: CENTER_LEFT;"
+                    onAction="#onAccountButtonClick"/>
+
+            <Pane VBox.vgrow="ALWAYS"/>
+
+            <Button fx:id="btnLogout"
+                    text="Logout"
+                    maxWidth="Infinity"
+                    style="-fx-background-color: #A93232;
+               -fx-text-fill: white;
+               -fx-font-size: 14px;
+               -fx-alignment: CENTER_LEFT;"
+                    onAction="#onLogoutButtonClick"/>
+
+        </VBox>
+    </left>
+
+
+
+    <!-- Main Content -->
+    <center>
+        <VBox spacing="20"
+              style="-fx-background-color: #F4F6F9; -fx-padding: 25;">
+
+            <!-- Page Title -->
+            <Label text="Home"
+                   style="-fx-font-size: 24px;
+                      -fx-font-weight: bold;
+                      -fx-text-fill: #243B55;"/>
+
+            <!-- User Information -->
+            <VBox spacing="8"
+                  style="-fx-background-color: white;
+                     -fx-padding: 20;
+                     -fx-background-radius: 8;">
+
+                <Label fx:id="lblWelcome"
+                       text="Welcome, Username!"
+                       style="-fx-font-size: 20px;
+                          -fx-font-weight: bold;
+                          -fx-text-fill: #243B55;"/>
+
+                <Label fx:id="lblRole"
+                       text="Role: BIDDER"
+                       style="-fx-font-size: 14px;
+                          -fx-text-fill: #667085;"/>
+
+            </VBox>
+
+            <!-- Extension Area -->
+            <VBox fx:id="contentArea"
+                  spacing="10"
+                  VBox.vgrow="ALWAYS"
+                  style="-fx-background-color: white;
+                     -fx-padding: 20;
+                     -fx-background-radius: 8;">
+
+                <Label text="Main Content Area"
+                       style="-fx-font-size: 18px;
+                          -fx-font-weight: bold;
+                          -fx-text-fill: #243B55;"/>
+
+                <Label text="Feature content will be displayed here."
+                       style="-fx-font-size: 14px;
+                          -fx-text-fill: #667085;"/>
+
+            </VBox>
+
+        </VBox>
+    </center>
+
+
+</BorderPane>
+

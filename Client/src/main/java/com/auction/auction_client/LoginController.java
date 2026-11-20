@@ -5,8 +5,11 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import entityService.AuthService;
 import javafx.scene.paint.Color;
+
+import entity.User;
+import entityService.UserSession;
+import entityService.AuthService;
 
 public class LoginController {
 
@@ -52,11 +55,16 @@ public class LoginController {
         }
 
         // Check login
-        boolean success = authService.login(username, password);
+        User user = authService.login(username, password);
 
-        if (success) {
-            lblMessage.setText("Login successful!");
-            lblMessage.setTextFill(Color.GREEN);
+        if (user != null) {
+
+            // Save current user session
+            UserSession.start(user);
+
+            // Navigate to Home
+            SceneNavigator.switchTo("/com/auction/auction_client/Home.fxml", lblMessage);
+
         } else {
             lblMessage.setText("Username or password not correct!");
             lblMessage.setTextFill(Color.RED);
