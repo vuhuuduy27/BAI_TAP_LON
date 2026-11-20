@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            prefHeight="400.0"
+            prefWidth="600.0">
+
+    <VBox spacing="15"
+          AnchorPane.topAnchor="20.0"
+          AnchorPane.leftAnchor="20.0">
+
+        <Label text="My Bids"
+               style="-fx-font-size: 24px;
+                      -fx-font-weight: bold;
+                      -fx-text-fill: #243B55;"/>
+
+        <Label text="Your bidding activities will be displayed here."
+               style="-fx-font-size: 14px;
+                      -fx-text-fill: #667085;"/>
+
+    </VBox>
+
+</AnchorPane>

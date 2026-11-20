@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Separator?>
+
+<VBox spacing="20"
+      prefWidth="700"
+      prefHeight="450"
+      style="-fx-background-color: white; -fx-padding: 20;"
+      xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1">
+
+    <!-- Page Header -->
+    <VBox spacing="6">
+        <Label text="Auctions"
+               style="-fx-font-size: 24px;
+                      -fx-font-weight: bold;
+                      -fx-text-fill: #243B55;"/>
+
+        <Label text="Explore available auction sessions."
+               style="-fx-font-size: 14px;
+                      -fx-text-fill: #667085;"/>
+    </VBox>
+
+    <Separator/>
+
+    <!-- Search Area -->
+    <HBox spacing="10" alignment="CENTER_LEFT">
+
+        <TextField promptText="Search auctions..."
+                   HBox.hgrow="ALWAYS"
+                   prefHeight="38"
+                   style="-fx-background-radius: 6;
+                          -fx-border-radius: 6;"/>
+
+        <Button text="Search"
+                prefHeight="38"
+                style="-fx-background-color: #243B55;
+                       -fx-text-fill: white;
+                       -fx-font-weight: bold;
+                       -fx-background-radius: 6;"/>
+
+    </HBox>
+
+    <!-- Auction List Header -->
+    <Label text="Auction Sessions"
+           style="-fx-font-size: 18px;
+                  -fx-font-weight: bold;
+                  -fx-text-fill: #243B55;"/>
+
+    <!-- Placeholder -->
+    <VBox spacing="10"
+          alignment="CENTER"
+          VBox.vgrow="ALWAYS"
+          style="-fx-background-color: #F4F6F9;
+                 -fx-background-radius: 8;
+                 -fx-padding: 20;">
+
+        <Label text="No auction sessions to display"
+               style="-fx-font-size: 16px;
+                      -fx-font-weight: bold;
+                      -fx-text-fill: #667085;"/>
+
+        <Label text="Auction sessions will appear here."
+               style="-fx-font-size: 13px;
+                      -fx-text-fill: #98A2B3;"/>
+
+    </VBox>
+
+</VBox>
+
