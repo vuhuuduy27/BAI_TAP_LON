@@ -60,6 +60,9 @@ public class LoginController {
         } else {
             lblMessage.setText("Username or password not correct!");
             lblMessage.setTextFill(Color.RED);
+
+            // Clear password when login fails
+            txtPassword.clear();
         }
     }
 }

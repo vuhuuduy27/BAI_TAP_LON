@@ -38,6 +38,7 @@
     <Button fx:id="btnLogin"
             text="Login"
             mnemonicParsing="false"
+            defaultButton="true"
             onAction="#onLoginButtonClick"/>
     <Hyperlink text="Don't have an account? Register"
                onAction="#onRegisterLinkClick"/>
